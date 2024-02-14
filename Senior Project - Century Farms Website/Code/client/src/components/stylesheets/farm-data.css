@@ -1,0 +1,34 @@
+.outer-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .data-container {
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    /* Apply styles for screens up to 768px width (mobile screens) */
+    .outer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .data-container {
+        text-align: left;
+        padding-left: 20px;
+      }
+    .mobile-padding {
+      padding-top: 35px;
+    }
+    img.mobile {
+      max-width: 800px;
+    }
+    .mobile-graphs {
+      max-width: 4000px;
+      max-height: 500px;
+      padding: 20px;
+    }
+  }
+
+  
