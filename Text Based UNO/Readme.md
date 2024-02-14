@@ -4,6 +4,6 @@ players. When a player takes a turn, the program prints out their hand and speci
 card that was played last. The console clears between each turn so players can see each others hands. Players must type "ready" to start
 their turn. The players continue playing according to the rules of classic UNO.
 
-Please refer to the video "Text Based Uno Demo" for a walkthrough of the running program. 
+Please refer to this video for a walkthrough of the running program: https://youtu.be/pMTXaPrzfso
 
 All of the code for the program is included in the "Code" folder. 
