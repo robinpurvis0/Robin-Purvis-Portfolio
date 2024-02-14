@@ -1,0 +1,26 @@
+{
+  "name": "ttffinalproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achidester/TTFFinalProject.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/achidester/TTFFinalProject/issues"
+  },
+  "homepage": "https://github.com/achidester/TTFFinalProject#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "mysql": "^2.18.1",
+    "popups": "^1.1.3"
+  },
+  "devDependencies": {}
+}
