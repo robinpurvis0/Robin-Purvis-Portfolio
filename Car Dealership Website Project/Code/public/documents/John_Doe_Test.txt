@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		5YJ3E7EA9LF701263	
+Make 			Tesla
+Model			Model 3			
+Year			2021
+Plate Number		6TRJ244 (California)
+Owner's Name 		John Doe
+
+
+Resale Info:
+
+Previous owner		Jane Doe
+Name of buyer		John Doe
+Mileage			80,894 miles
+Sale Price		$37,794
+Sale Date		08/17/2021

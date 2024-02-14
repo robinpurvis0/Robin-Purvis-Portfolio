@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		JMYXTCW5WCU707402
+Make 			Tesla
+Model			Roadster
+Year			2020
+Plate Number		KUJ 614 (Oregon)
+Owner's Name 		Dream Team Xin 
+
+
+Resale Info:
+
+Previous owner		N/A
+Name of buyer		N/A
+Mileage			N/A
+Sale Price		N/A
+Sale Date		N/A

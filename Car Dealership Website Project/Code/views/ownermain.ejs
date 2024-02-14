@@ -1,0 +1,21 @@
+<%- include('commonHeader.ejs', {title: "Owner Information"}); %>
+
+<div class="text-center padding-lg">
+  <h2 class="mt-3 mb-3 text-center">Register a new owner:</h2>
+  <button class="text-center"><a href="/owner/create" id="ownercreatebtn">New Registration</a></button>
+
+  <h2 class="mt-3 text-center">Choose an owner to find information for:</h2>
+      <div class="dropdown btn-group dropdown-menu-center">
+      <button class="dropbtn">Hover to choose an owner</button>
+      <div id="selectedowner" class="dropdown-content">
+          <% for (let owner of owners) { %>
+              <a href="/owner/id/<%- owner._id %>"><%- owner.fullname %></a>
+              <% } %>
+      </div>
+      </div>
+
+</div>
+</main>
+
+<%- include('commonFooter.ejs'); %>
+    

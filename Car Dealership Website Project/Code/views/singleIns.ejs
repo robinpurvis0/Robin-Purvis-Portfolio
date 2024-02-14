@@ -1,0 +1,33 @@
+<%- include('commonHeader.ejs', {title: ins.name}); %>
+
+<h1 class="text-center"><%- ins.name %></h1>
+<hr>
+
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Owner</th>
+                <th>#Policy</th>
+                <th>Start_Date</th>
+                <th>End_Date</th>
+                <th>Payment</th>
+                <th>Coverage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i=1; i < members.length; ++i) { %>
+                <tr>
+                    <td><a href="/owner/id/<%-members[i]._id%>"><%-members[i].fullname %></a></td>
+                    <td><%-coverage[i].ins_policy  %></td>
+                    <td><%-coverage[i].ins_s_date %></td>
+                    <td><%-coverage[i].ins_e_date  %></td>
+                    <td><%-coverage[i].ins_payment  %></td>
+                    <td><a href="/ins/detail/<%-members[i].insuranceDetailID%>"> View Detail</a></td>
+                </tr>
+            <%} %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('commonFooter.ejs'); %>

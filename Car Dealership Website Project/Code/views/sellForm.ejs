@@ -1,0 +1,26 @@
+<%- include('commonHeader.ejs', {title: title}); %>
+
+<h1>Who are you selling the <%- currentTitle.make %> <%- currentTitle.model %> to?</h1>
+
+<form method="POST" action="/owner/sell/<%- currentTitle._id%>">
+    <input type="hidden" name="ownerid" value="<%- currentOwner._id %>" >
+    <input type="hidden" name="carid" value="<%- currentTitle._id %>" >
+    <input type="hidden" class="form-control" name="vin" id="vin" value="<%- currentTitle.vin%>" >
+    <div class="mb-3">
+        <label for="firstname" class="form-label">Enter first name of buyer:</label>
+        <input type="text" class="form-control" name="firstname" id="firstname" value="<%- newOwner.first_name %>" required>
+    </div>
+    <div class="mb-3">
+        <label for="lastname" class="form-label">Enter last name of buyer:</label>
+        <input type="text" class="form-control" name="lastname" id="lastname" value="<%- newOwner.last_name %>" required>
+    </div>
+    <div class="mb-3">
+        <label for="phone" class="form-label">Enter phone number of buyer:</label>
+        <input type="tel" class="form-control" name="phone" id="phone" value="<%-newOwner.phone%>" placeholder="123-4567-890" minlength="10"  required>
+    </div>
+
+    <hr>
+    <button class="btn btn-primary my-3" type="submit"> Submit</button>
+</form>
+
+<%- include('commonFooter.ejs'); %>

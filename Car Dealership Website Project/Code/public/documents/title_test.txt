@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number
+Make 
+Model
+Year
+Plate Number		
+Owner's Name 
+
+
+Resale Info:
+
+Name of owner
+Name of buyer
+Mileage
+Sale Price
+Sale Date

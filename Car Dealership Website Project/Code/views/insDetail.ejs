@@ -1,0 +1,72 @@
+<%- include('commonHeader.ejs', {title: owner}); %>
+
+    <h1 class="text-center mt-3"><%- owner %></h1>
+    <hr>
+    <table class="table table-sm table-bordered text-center">
+        <tbody>
+            <tr>
+                <th scope="row" rowspan="5" style="vertical-align: middle;"> Basic Info</th>
+                <th>Name: </th>
+                <td colspan="2"><%- owner%></td>
+            </tr>
+            <tr>
+                <th>Payment:</th>
+                <td colspan="2"><%-detail.ins_payment %></td>
+            </tr>
+            <tr>
+                <th>#Poliy:</th>
+                <td colspan="2"><%-detail.ins_policy %></td>
+            </tr>
+            <tr>
+                <th>Starting Date:</th>
+                <td colspan="2"><%-detail.ins_s_date %></td>
+            </tr>
+            <tr>
+                <th>Ending Date:</th>
+                <td colspan="2"><%-detail.ins_e_date %></td>
+            </tr>
+            
+            <tr>
+                <th scope="row" rowspan="8" style="vertical-align: middle;"> Coverage Info</th>
+                <th rowspan="2" style="vertical-align: middle;">For Others </th>
+                <td>Bodily Injury Liability:</td>
+                <td><%- detail.ins_BIL%></td>
+            </tr>
+            <tr>
+                <td>Property Damage Liability</td>
+                <td><%- detail.ins_PDL%></td>
+            </tr>
+            <tr>
+                <th rowspan="2" style="vertical-align: middle;"> For You</th>
+                <td>Personal Injury Protection:</td>
+                <td><%- detail.ins_PIP %></td>
+            </tr>
+            <tr>
+                <td>Uninsured Motorist Bodily Injury:</td>
+                <td><%- detail.ins_UMBI %></td>
+            </tr>
+            
+            <tr>
+                <th rowspan="3" style="vertical-align: middle;"> For Car</th>
+                <td>Uninsured Motorist Property Damage:</td>
+                <td><%- detail.ins_UMPD %></td>
+            </tr>
+            <tr>
+                <td>Comprehensive:</td>
+                <td><%- detail.ins_com %></td>
+            </tr>
+            <tr>
+                <td>Collision:</td>
+                <td><%- detail.ins_collision %></td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+
+    <a href="/ins/update/<%-detail._id%>"> Update</a>
+
+
+
+<%- include('commonFooter.ejs'); %>

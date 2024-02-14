@@ -1,0 +1,78 @@
+<%- include('commonHeader.ejs', {title: title}); %>
+
+
+<form method="POST" action="/ins/update/<%-insDetail._id %>">
+    <fieldset>
+        <input type="hidden" name="insDetail_id" value="<%- insDetail._id%>">
+        <input type="hidden" name="owner_id" value="<%- owner._id%>">
+
+        <legend>Ins Detail</legend>
+        <div class="mb-3">
+            <% for(let i of insList) { %>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="insuranceID" value="<%-i._id %>"
+                    id="ins_<%- i._id%>" <%- owner.insuranceID && owner.insuranceID.equals(i._id)? 'checked':''%>>
+                    <label for="ins_<%- i._id%>" class="form-check-label"><%- i.name%></label>
+                </div>
+            <%}%>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="insuranceID" value=""
+                    id="none" <%- !owner.insuranceID ? 'checked':''%>>
+                    <label for="none" class="form-check-label" >None</label>
+                </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="ins_policy" class="form-label">#Policy</label>
+            <input type="text" class="form-control" name="ins_policy" id="ins_policy" value="<%-insDetail.ins_policy%>"  required>
+        </div>
+        <div class="mb-3">
+            <label for="ins_payment" class="form-label">Monthly Payment</label>
+            <input type="text" class="form-control" name="ins_payment" id="ins_payment" value="<%-insDetail.ins_payment%>"  required>
+        </div>
+        <div class="mb-3">
+            <label for="ins_s_date" class="form-label">Starting Date</label>
+            <input type="text" class="form-control" name="ins_s_date" id="ins_s_date" value="<%-insDetail.ins_s_date%>"  required>
+        </div>
+        <div class="mb-3">
+            <label for="ins_e_date" class="form-label">Ending Date</label>
+            <input type="text" class="form-control" name="ins_e_date" id="ins_e_date" value="<%-insDetail.ins_e_date%>"  required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="ins_BIL" class="form-label">Bodily Injury Liability <em>(for others)</em></label>
+            <input type="text" class="form-control" name="ins_BIL" id="ins_BIL" value="<%-insDetail.ins_BIL%>"  >
+        </div>
+        <div class="mb-3">
+            <label for="ins_PDL" class="form-label">Property Damage Liability <em>(for others)</em></label>
+            <input type="text" class="form-control" name="ins_PDL" id="ins_PDL" value="<%-insDetail.ins_PDL%>"  >
+        </div>
+        <div class="mb-3">
+            <label for="ins_PIP" class="form-label">Personal Injury Protection <em>(for you)</em></label>
+            <input type="text" class="form-control" name="ins_PIP" id="ins_PIP" value="<%-insDetail.ins_PIP%>"  >
+        </div>
+        <div class="mb-3">
+            <label for="ins_UMBI" class="form-label">Uninsured Motorist Bodily Injury <em>(for you)</em></label>
+            <input type="text" class="form-control" name="ins_UMBI" id="ins_UMBI" value="<%-insDetail.ins_UMBI%>" >
+        </div>
+        <div class="mb-3">
+            <label for="ins_UMPD" class="form-label">Uninsured Motorist Property Damage <em>(for car)</em></label>
+            <input type="text" class="form-control" name="ins_UMPD" id="ins_UMPD" value="<%-insDetail.ins_UMPD%>"  >
+        </div>
+        <div class="mb-3">
+            <label for="ins_collision" class="form-label">Collision <em>(for car)</em></label>
+            <input type="text" class="form-control" name="ins_collision" id="ins_collision" value="<%-insDetail.ins_collision%>"  >
+        </div>
+        <div class="mb-3">
+            <label for="ins_com" class="form-label">Comprehensive <em>(for car)</em></label>
+            <input type="text" class="form-control" name="ins_com" id="ins_com" value="<%-insDetail.ins_com%>"  >
+        </div>
+        <hr>
+    </fieldset>
+    <button class="btn btn-primary my-3" type="submit"> Submit</button>
+
+
+
+</form>
+
+<%- include('commonFooter.ejs'); %>

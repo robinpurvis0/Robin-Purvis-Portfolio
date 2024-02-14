@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		X7LASRBA660107865
+Make 			Tesla
+Model			Cyber Truck
+Year			2021
+Plate Number		942FQL (Oregon)
+Owner's Name		Dream Team Randy
+
+
+Resale Info:
+
+Previous owner		N/A
+Name of buyer		N/A
+Mileage			N/A
+Sale Price		N/A
+Sale Date		N/A

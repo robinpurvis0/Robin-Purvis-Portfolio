@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		1HD1JL5177Y055916
+Make 			Toyota
+Model			Yaris
+Year			2007
+Plate Number		LOL WUT (Oregon)
+Owner's Name 		Will Jeanniton
+
+
+Resale Info:
+
+Previous owner		Will Jeanniton
+Name of buyer		Some Creepy Guy On Craigslist
+Mileage			177,082 miles
+Sale Price		$1275
+Sale Date		10/25/2018	

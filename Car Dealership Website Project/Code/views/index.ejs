@@ -1,0 +1,75 @@
+<%- include('commonHeader.ejs', {title: "Owner Information"}); %>
+    <main class="row mt-4">
+        <div class="all">
+            <hr>
+            <h2 id="header1" style="text-align: center;">Top Selling Vehicle Inventory</h2>
+            <div class="mt-2" style="max-width: 500px ; margin: 0px auto;">
+                <canvas id="myChart"></canvas>
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Toyota', 'Mazda', 'Oldsmobile'],
+                            datasets: [{
+                                // label: "Members",
+                                data: [<%- Toyota %>, <%- Mazda %>, <%- Oldsmobile %>],
+                                backgroundColor: [
+                                    'rgba(179, 60, 113, 0.8)',
+                                    'rgba(30, 60, 179, 0.8)',
+                                    'rgba(60, 179,113, 0.8)',
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                    });
+                </script>
+            </div>
+
+            <h1 id="header1">Choose your vehicle</h1>
+            <hr class="featurette-divider" />
+            <% for(i = 0; i < 10; i++) { %>
+                <h2 class="bg-dark text-white text-center">
+                    <%- cars[i].make %>
+                </h2>
+                <div class="row featurette text-center">
+                    <div class="col-md-4 order-md-1">
+                        <img src="<%- cars[i].logo %>" alt="car1" class="img-fluid" />
+                    </div>
+                    <div class="col-md-8 order-md-2 align-self-center">
+                        <div class="right-content">
+                            <table id="tablecar">
+                                <th><a class="text-decoration-none" href="./owner/id/<%- cars[i].ownerID %>">Owner</a></th>
+                                <th><a class="text-decoration-none" href="./owner/sell/<%- cars[i]._id %>">Sell This Title</a></th>
+                                <th><a class="text-decoration-none" href="/ins">Insurance</a></th>
+                                </tr>
+                                <tr>
+                                    <td>Make:
+                                        <%- cars[i].make %>
+                                    </td>
+                                    <td>Model:
+                                        <%- cars[i].model %>
+                                    </td>
+                                    <td>Year:
+                                        <%- cars[i].year %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Vin#:
+                                        <%- cars[i].vin %>
+                                    </td>
+                                    <td>Mileage:
+                                        <%- cars[i].mileage %>
+                                    </td>
+                                    <td><a href="/delete/<%-cars[i]._id%>"> Click here to delete car title</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <%}%>
+        </div>
+
+
+        <%- include('commonFooter.ejs'); %>

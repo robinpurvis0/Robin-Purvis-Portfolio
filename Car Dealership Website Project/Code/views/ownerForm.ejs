@@ -1,0 +1,237 @@
+<%- include('commonHeader.ejs', {title: title}); %>
+
+    <form method="POST" action="/owner/update/<%- owner._id%>">
+        <fieldset class="mt-3">
+            <legend>Personal Info</legend>
+            <input type="hidden" name="owner_id" value="<%- owner._id%>">
+            <input type="hidden" name="insDetail_id" value="<%- insDetail._id%>">
+            <input type="hidden" name="newCar_id" value="<%- newCar._id%>">
+
+
+            <div class="mb-3">
+                <label for="first_name" class="form-label">First Name <em>(Required)</em></label>
+                <input type="text" class="form-control" name="first_name" id="first_name" value="<%- owner.first_name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="last_name" class="form-label">Last Name <em>(Required)</em></label>
+                <input type="text" class="form-control" name="last_name" id="last_name" value="<%- owner.last_name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender </label>
+                <select name="gender" id="gender">
+                    <option value="Male" <%-owner.gender && owner.gender === "Male" ? 'selected' :'' %>>Male</option>
+                    <option value="Female" <%-owner.gender && owner.gender === "Female" ? 'selected' :'' %>>Female</option>
+                    <option value="Bigender" <%-owner.gender && owner.gender === "Bigender" ? 'selected' :'' %>>Bigender</option>
+                    <option value="Non-binary" <%-owner.gender && owner.gender === "Non-binary" ? 'selected' :'' %>>Non-binary</option>
+                    <option value="Polygender" <%-owner.gender && owner.gender === "Polygender" ? 'selected' :'' %>>Polygender</option>
+                    <option value="Agender" <%-owner.gender && owner.gender === "Agender" ? 'selected' :'' %>>Agender</option>
+                    <option value="Genderfluid" <%-owner.gender && owner.gender === "Genderfluid" ? 'selected' :'' %>>Genderfluid</option>
+                    <option value="Genderqueer" <%-owner.gender && owner.gender === "Genderqueer" ? 'selected' :'' %>>Genderqueer</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age <em>(Required)</em></label>
+                <input type="number" class="form-control" name="age" id="age" value="<%-owner.age%>" required min="0">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone <em>(Required)</em></label>
+                <input type="tel" class="form-control" name="phone" id="phone" value="<%-owner.phone%>" placeholder="123-4567-890" minlength="10"  required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address <em>(Required)</em></label>
+                <input type="text" class="form-control" name="address" id="address" value="<%-owner.address%>" required>
+            </div>
+            <div class="mb-3">
+                <label for="state" class="form-label">State </label>
+            <select>
+                <option value="AL">AL</option>
+                <option value="AK">AK</option>
+                <option value="AR">AR</option>	
+                <option value="AZ">AZ</option>
+                <option value="CA">CA</option>
+                <option value="CO">CO</option>
+                <option value="CT">CT</option>
+                <option value="DC">DC</option>
+                <option value="DE">DE</option>
+                <option value="FL">FL</option>
+                <option value="GA">GA</option>
+                <option value="HI">HI</option>
+                <option value="IA">IA</option>	
+                <option value="ID">ID</option>
+                <option value="IL">IL</option>
+                <option value="IN">IN</option>
+                <option value="KS">KS</option>
+                <option value="KY">KY</option>
+                <option value="LA">LA</option>
+                <option value="MA">MA</option>
+                <option value="MD">MD</option>
+                <option value="ME">ME</option>
+                <option value="MI">MI</option>
+                <option value="MN">MN</option>
+                <option value="MO">MO</option>	
+                <option value="MS">MS</option>
+                <option value="MT">MT</option>
+                <option value="NC">NC</option>	
+                <option value="NE">NE</option>
+                <option value="NH">NH</option>
+                <option value="NJ">NJ</option>
+                <option value="NM">NM</option>			
+                <option value="NV">NV</option>
+                <option value="NY">NY</option>
+                <option value="ND">ND</option>
+                <option value="OH">OH</option>
+                <option value="OK">OK</option>
+                <option value="OR">OR</option>
+                <option value="PA">PA</option>
+                <option value="RI">RI</option>
+                <option value="SC">SC</option>
+                <option value="SD">SD</option>
+                <option value="TN">TN</option>
+                <option value="TX">TX</option>
+                <option value="UT">UT</option>
+                <option value="VT">VT</option>
+                <option value="VA">VA</option>
+                <option value="WA">WA</option>
+                <option value="WI">WI</option>	
+                <option value="WV">WV</option>
+                <option value="WY">WY</option>
+            </select>		
+            </div>
+            <div class="mb-3">
+                <label for="zipcode" class="form-label">Zipcode <em>(required)</em></label>
+                <input type="text" class="form-control" name="zipcode" id="zipcode" value="<%- owner.zipcode%>" required>
+            </div>   
+            <hr>
+        </fieldset>
+
+        <fieldset>
+            <legend>Insurance Company</legend>
+            <div class="mb-3">
+                <% for(let i of insList) { %>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="insuranceID" value="<%-i._id %>"
+                        id="ins_<%- i._id%>" <%- owner.insuranceID && owner.insuranceID.equals(i._id)? 'checked':''%>>
+                        <label for="ins_<%- i._id%>" class="form-check-label"><%- i.name%></label>
+                    </div>
+                <%}%>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" name="insuranceID" value=""
+                        id="none" <%- !owner.insuranceID ? 'checked':''%>>
+                        <label for="none" class="form-check-label" >None</label>
+                    </div>
+            </div>
+            <div class="mb-3">
+                <label for="ins_policy" class="form-label">#Policy</label>
+                <input type="text" class="form-control" name="ins_policy" id="ins_policy" value="<%-insDetail.ins_policy%>"  required>
+            </div>
+            <div class="mb-3">
+                <label for="ins_payment" class="form-label">Monthly Payment</label>
+                <input type="text" class="form-control" name="ins_payment" id="ins_payment" value="<%-insDetail.ins_payment%>"  required>
+            </div>
+            <div class="mb-3">
+                <label for="ins_s_date" class="form-label">Starting Date</label>
+                <input type="text" class="form-control" name="ins_s_date" id="ins_s_date" value="<%-insDetail.ins_s_date%>"  required>
+            </div>
+            <div class="mb-3">
+                <label for="ins_e_date" class="form-label">Ending Date</label>
+                <input type="text" class="form-control" name="ins_e_date" id="ins_e_date" value="<%-insDetail.ins_e_date%>"  required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="ins_BIL" class="form-label">Bodily Injury Liability <em>(for others)</em></label>
+                <input type="text" class="form-control" name="ins_BIL" id="ins_BIL" value="<%-insDetail.ins_BIL%>"  >
+            </div>
+            <div class="mb-3">
+                <label for="ins_PDL" class="form-label">Property Damage Liability <em>(for others)</em></label>
+                <input type="text" class="form-control" name="ins_PDL" id="ins_PDL" value="<%-insDetail.ins_PDL%>"  >
+            </div>
+            <div class="mb-3">
+                <label for="ins_PIP" class="form-label">Personal Injury Protection <em>(for you)</em></label>
+                <input type="text" class="form-control" name="ins_PIP" id="ins_PIP" value="<%-insDetail.ins_PIP%>"  >
+            </div>
+            <div class="mb-3">
+                <label for="ins_UMBI" class="form-label">Uninsured Motorist Bodily Injury <em>(for you)</em></label>
+                <input type="text" class="form-control" name="ins_UMBI" id="ins_UMBI" value="<%-insDetail.ins_UMBI%>" >
+            </div>
+            <div class="mb-3">
+                <label for="ins_UMPD" class="form-label">Uninsured Motorist Property Damage <em>(for car)</em></label>
+                <input type="text" class="form-control" name="ins_UMPD" id="ins_UMPD" value="<%-insDetail.ins_UMPD%>"  >
+            </div>
+            <div class="mb-3">
+                <label for="ins_collision" class="form-label">Collision <em>(for car)</em></label>
+                <input type="text" class="form-control" name="ins_collision" id="ins_collision" value="<%-insDetail.ins_collision%>"  >
+            </div>
+            <div class="mb-3">
+                <label for="ins_com" class="form-label">Comprehensive <em>(for car)</em></label>
+                <input type="text" class="form-control" name="ins_com" id="ins_com" value="<%-insDetail.ins_com%>"  >
+            </div>
+            <hr>
+        </fieldset>
+
+        <fieldset>
+            <legend>Car Info</legend>
+            <div class="mb-3">
+                <% if(cars.length !== 0 ) { %>
+                    <% for (let c=0; c < cars.length; ++c) { %>
+                        <div class="mb-3">
+                            <label for="vin" class="form-label">#Vin</label>
+                            <input type="text" class="form-control" name="vin<%-c%>" id="vin" value="<%- cars[c].vin%>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="make" class="form-label">Make</label>
+                            <input type="text" class="form-control" name="make<%-c%>" id="make" value="<%- cars[c].make%>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="model" class="form-label">Model</label>
+                            <input type="text" class="form-control" name="model<%-c%>" id="model" value="<%- cars[c].model%>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="year" class="form-label">Year</label>
+                            <input type="number" class="form-control" name="year<%-c%>" id="year" value="<%- cars[c].year%>" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="mileage" class="form-label">Mileage</label>
+                            <input type="number" class="form-control" name="mileage<%-c%>" id="mileage" value="<%- cars[c].mileage%>" >
+                        </div>
+                        <hr>
+                    <%}%>
+                
+                <%}%>
+            </div>
+            <div class="addCar">
+                <div class="mb-3 form-check">
+                    <input class="form-check-input" type="checkbox" name="active" id="active" value="true">
+                    <label for="active" class="form-check-label">Add Car <em>(fill the form below if adding new car. If not, keep it blank)</em></label>
+                </div>
+                <div class="mb-3">
+                    <label for="newVin" class="form-label">#Vin</label>
+                    <input type="text" class="form-control" name="newVin" id="newVin"  >
+                </div>
+                <div class="mb-3">
+                    <label for="newMake" class="form-label">Make</label>
+                    <input type="text" class="form-control" name="newMake" id="newMake"  >
+                </div>
+                <div class="mb-3">
+                    <label for="newModel" class="form-label">Model</label>
+                    <input type="text" class="form-control" name="newModel" id="newModel" >
+                </div>
+                <div class="mb-3">
+                    <label for="newYear" class="form-label">Year</label>
+                    <input type="number" class="form-control" name="newYear" id="newYear" >
+                </div>
+                <div class="mb-3">
+                    <label for="newMileage" class="form-label">Mileage</label>
+                    <input type="number" class="form-control" name="newMileage" id="newMileage" >
+                </div>
+                <div class="mb-3">
+                    <label for="newLogo" class="form-label">Image Link</label>
+                    <input type="text" class="form-control" name="newLogo" id="newLogo" >
+                </div>
+            </div>
+        </fieldset>
+        <hr>
+        <button class="btn btn-primary my-3" type="submit"> Submit</button>
+    
+    </form>
+
+<%- include('commonFooter.ejs'); %>

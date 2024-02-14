@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		1D7HU18226S686502
+Make 			Tesla
+Model			Model 3
+Year			2021
+Plate Number		7TYP290 (California)
+Owner's Name 		Jane Doe
+
+
+Resale Info:
+
+Previous owner		N/A
+Name of buyer		N/A
+Mileage			N/A
+Sale Price		N/A
+Sale Date		N/A

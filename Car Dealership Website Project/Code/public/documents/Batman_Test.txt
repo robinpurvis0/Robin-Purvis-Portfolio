@@ -1,0 +1,20 @@
+Batman
+
+Title Object
+
+VIN #
+Make 
+Model
+Year
+Plate #
+Owner's Name 
+Owner's Address
+
+
+Sale Info:
+
+Name & Address of owner
+Name & Address of buyer
+Mileage
+Sale Price
+Sale Date

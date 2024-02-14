@@ -1,0 +1,78 @@
+<%- include('commonHeader.ejs', {title: 'Insurance List'}); %>
+
+    <div class="row mt-4 text-center">
+        <% for (let i of ins) { %>
+            <div class="col-lg-4">
+                <p>
+                    <a href="<%- i.url %>" class="btn btn-secondary bg-success">
+                        <%- i.name %> &raquo; </a>
+                </p>
+            </div>
+            <% } %>
+
+                <hr>
+                <% for(let i of ins) { %>
+                    <div class="row featurette text-center mt-3">
+                        <div class=" col-md-4 text-center mb-3">
+                            <a href="<%- i.url %>"> <img src="<%- i.logo %>" style="max-height: 128px ;" class="" ></a>
+                        </div>
+                        <div class="col-md-8 order-md-2 align-self-center">
+                            <div class="right-content">
+                                <table id="tablecar">
+                                    <th><a class="text-decoration-none">Insurance</a></th>
+                                    <th><a class="text-decoration-none">Founder</a></th>
+                                    <th><a class="text-decoration-none">Headquarter</a></th>
+                                    <th><a class="text-decoration-none">Rank</a></th>
+                                    <th><a class="text-decoration-none">Website</a></th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%- i.name %>
+                                        </td>
+                                        <td>
+                                            <%- i.founder %>
+                                        </td>
+                                        <td>
+                                            <%- i.headquarter %>
+                                        </td>
+                                        <td>
+                                            <%- i.rank %>
+                                        </td>
+                                        <td> <a href="http://<%-i.website %>">About Us</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                        <hr>
+                        <h2 class="mt3">Insurance Members Chart</h2>
+                        <div class="mt-2" style="max-width: 500px ; margin: 0px auto;">
+                            <canvas id="myChart"></canvas>
+                            <script>
+                                var ctx = document.getElementById('myChart').getContext('2d');
+                                var myChart = new Chart(ctx, {
+                                    type: 'pie',
+                                    data: {
+                                        labels: ['State Farm', 'Geico', 'Progressive'],
+                                        datasets: [{
+                                            // label: "Members",
+                                            data: [<%- sfNum %>, <%- geicoNum %>, <%- proNum %>],
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.2)',
+                                                'rgba(54, 162, 235, 0.2)',
+                                                'rgba(255, 206, 86, 0.2)',
+                                            ],
+                                            borderColor: [
+                                                'rgba(255, 99, 132, 1)',
+                                                'rgba(54, 162, 235, 1)',
+                                                'rgba(255, 206, 86, 1)',
+                                            ],
+                                            borderWidth: 2
+                                        }]
+                                    },
+                                });
+                            </script>
+                        </div>
+
+                        <%- include('commonFooter.ejs'); %>

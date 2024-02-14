@@ -1,0 +1,17 @@
+Title Object
+
+VIN Number		JMYXTCW5WCU707402
+Make 			Tesla
+Model			Model Y
+Year			2021
+Plate Number		FAZ 016 (Oregon)
+Owner's Name 		Robin Purvis
+
+
+Resale Info:
+
+Previous owner		N/A
+Name of buyer		N/A
+Mileage			N/A
+Sale Price		N/A
+Sale Date		N/A
