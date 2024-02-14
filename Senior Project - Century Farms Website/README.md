@@ -6,17 +6,16 @@ of agricultural history and heritage. This project was a Senior Capstone project
 Computer Science students in cooperation with a graduate student and her mentor.
 
 ## Features
+  - **Farm Search:** Users can search for century farms in Oregon's Willamette Valley by entering a name.
+  - **Farm Filter:** Users can filter listed century farms by their current crops and livestock.
+  - **Farm Details:** Users can view detailed information about each century farm, including its history, family stories, and any historical images.
+  - **Interactive Map:** The app provides an interactive map that displays the locations of century farms, allowing users to visualize their distribution in the region.
+  - **Climate Data:** Users can view precipitation and temperature time-series graphs for any farm to learn about their long-term climate experience.
 
-- **Farm Search:** Users can search for century farms in Oregon's Willamette Valley by entering a name.
-- **Farm Filter:** Users can filter listed century farms by their current crops and livestock.
-- **Farm Details:** Users can view detailed information about each century farm, including its history, family stories, and any historical images.
-- **Interactive Map:** The app provides an interactive map that displays the locations of century farms, allowing users to visualize their distribution in the region.
-- **Climate Data:** Users can view precipitation and temperature time-series graphs for any farm to learn about their long-term climate experience.
+## Live Demo
+View this video for a walkthrough of the completed app: https://youtu.be/UNOeRtSMF6s
 
 ## Technologies Used
-
-The Century Farms Web App is built using the following technologies:
-
-- **Frontend:** React, Mapbox GL JS, HTML, CSS
-- **Backend:** Node.js, Express
-- **Database:** MongoDB
+  - **Frontend:** React, Mapbox GL JS, HTML, CSS
+  - **Backend:** Node.js, Express
+  - **Database:** MongoDB
